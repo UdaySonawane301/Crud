@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRUD Dashboard • Admin Panel</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gradient">
+  <header class="navbar">
+    <div class="brand">CRUD Dashboard</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="admin.html" class="active">Admin Panel</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main class="container admin">
+    <section class="card fade-in">
+      <h1>Admin Panel</h1>
+      <p class="muted">Add, search, edit and delete entries.</p>
+
+      <form id="add-form" class="grid form mt-md">
+        <input required type="text" id="name" placeholder="Name" />
+        <input required type="email" id="email" placeholder="Email" />
+        <input required type="text" id="role" placeholder="Role" />
+        <button class="btn primary" type="submit">Add Entry</button>
+      </form>
+
+      <div class="toolbar mt-md">
+        <input type="text" id="search" placeholder="Search by name, email or role..." />
+        <button id="clear-all" class="btn danger ghost">Clear All</button>
+      </div>
+
+      <div class="table-wrap mt-md slide-up">
+        <table class="table" id="entries-table" aria-describedby="table-desc">
+          <caption id="table-desc" class="sr-only">Entries list with actions</caption>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th class="actions-col">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="entries-body">
+            <!-- rows injected by JS -->
+          </tbody>
+        </table>
+        <div id="empty-state" class="empty-state fade-in" hidden>
+          <div class="emoji">🗂️</div>
+          <p>No entries yet. Add your first one above!</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Edit Modal -->
+  <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-backdrop" data-modal-close></div>
+    <div class="modal-content card bounce-in" role="document">
+      <header class="modal-header">
+        <h2>Edit Entry</h2>
+        <button class="icon-btn" id="modal-close" aria-label="Close" data-modal-close>&times;</button>
+      </header>
+      <form id="edit-form" class="grid form">
+        <input required type="text" id="edit-name" placeholder="Name" />
+        <input required type="email" id="edit-email" placeholder="Email" />
+        <input required type="text" id="edit-role" placeholder="Role" />
+        <button class="btn primary" type="submit">Save Changes</button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <small>© <span id="year"></span> CRUD Dashboard</small>
+  </footer>
+
+  <script src="admin.js"></script>
+</body>
+</html>

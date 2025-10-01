@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRUD Dashboard • Home</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gradient">
+  <header class="navbar">
+    <div class="brand">CRUD Dashboard</div>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="admin.html">Admin Panel</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main class="container home">
+    <section class="hero card fade-in">
+      <div class="hero-content">
+        <h1 class="typing" id="typing-title" aria-live="polite">Welcome</h1>
+        <p class="mt-sm">A simple, animated CRUD dashboard built with HTML, CSS and vanilla JavaScript.</p>
+        <div class="actions mt-md">
+          <a class="btn primary" href="admin.html">Go to Admin Panel</a>
+          <a class="btn ghost" href="about.html">Learn More</a>
+        </div>
+      </div>
+      <div class="hero-aside">
+        <div class="spinner" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <section class="features grid mt-lg slide-up">
+      <div class="feature card hover-lift">
+        <h3>Fast</h3>
+        <p>In-memory data with localStorage persistence for quick demo-ready CRUD.</p>
+      </div>
+      <div class="feature card hover-lift">
+        <h3>Animated</h3>
+        <p>CSS keyframes: fades, slides, bounces, and a smooth modal experience.</p>
+      </div>
+      <div class="feature card hover-lift">
+        <h3>Responsive</h3>
+        <p>Looks great on phones and desktops thanks to fluid layouts and media queries.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>© <span id="year"></span> CRUD Dashboard</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
